@@ -1,0 +1,102 @@
+### get to lands
+GET http://localhost:3000/api/lands
+
+### post to lands
+POST http://localhost:3000/api/lands
+Content-Type: application/json
+
+{
+    "nameLand" : "Quito Norte",
+    "description" : "100mx20m"
+}
+
+```http
+### get to lands
+GET http://localhost:3000/api/lands
+
+### post to lands
+POST http://localhost:3000/api/lands
+Content-Type: application/json
+
+{
+    "nameLand" : "Quito Norte",
+    "description" : "100mx20m"
+}
+
+### get to harvest
+GET http://localhost:3000/api/harvest
+
+### post to harvest
+POST http://localhost:3000/api/harvest
+Content-Type: application/json
+
+{
+    "nameHarvest" : "Quito Norte",
+    "date" : "2025-12-25",
+    "amountOfBags" : 100,
+    "pricePerBag" : 10.5,
+    "nameLand" : "LOTE GUAYAQUIL"
+}
+
+### Get all clasifications
+GET http://localhost:3000/api/clasification
+Accept: application/json
+
+### Create clasification (usa un `nameHarvest` que exista)
+POST http://localhost:3000/api/clasification
+Content-Type: application/json
+
+{
+    "nameClasification": "baba",
+    "min": 1.50,
+    "max": 3.00,
+    "nameHarvest": "cosecha"
+}
+
+### Delete clasification (reemplaza {{id}} por el id real)
+DELETE http://localhost:3000/api/clasification/1
+Accept: application/json
+
+### Get all clients
+GET http://localhost:3000/api/clients
+Accept: application/json
+
+### Create client
+POST http://localhost:3000/api/clients
+Content-Type: application/json
+
+{
+  "name": "Juan Perez",
+  "idNumber": "0102030405",
+  "phoneNumber": "0999000111"
+}
+
+### Delete client (reemplaza {{id}} por el id real)
+DELETE http://localhost:3000/api/clients/{{id}}
+Accept: application/json
+
+### Get all sales
+GET http://localhost:3000/api/sales
+Accept: application/json
+
+### Create sale (cliente + venta en un solo body). Asegúrate de que `nameHarvest` exista.
+POST http://localhost:3000/api/sales
+Content-Type: application/json
+
+{
+  "name": "Juan Perez",
+  "idNumber": "0102030405",
+  "phoneNumber": "0999000111",
+  "date": "2025-12-26 10:00:00",
+  "amountOfBags": 5,
+  "pricePerBag": 12.5,
+  "nameHarvest": "Cosecha 2025"
+}
+
+### Delete sale (reemplaza {{id}} por el id real)
+DELETE http://localhost:3000/api/sales/{{id}}
+Accept: application/json
+
+### Nota
+// Usa Thunder Client o REST Client en VS Code. Ejecuta primero el POST a /api/harvest si no tienes harvests.
+```
