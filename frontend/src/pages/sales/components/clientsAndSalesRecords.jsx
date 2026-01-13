@@ -6,7 +6,7 @@ export default function ClientsAndSalesRecords() {
 
   async function fetchClients() {
     try {
-      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/clients`);
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/clients`);
       const data = await res.json();
       setClients(data);
     } catch (e) {
@@ -16,7 +16,7 @@ export default function ClientsAndSalesRecords() {
 
   async function fetchSales() {
     try {
-      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/salesAndClients`);
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/salesAndClients`);
       const data = await res.json();
       setSales(data);
     } catch (e) {
@@ -44,7 +44,7 @@ export default function ClientsAndSalesRecords() {
 
   async function handleDeleteClient(id) {
     try {
-      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/clients/${id}`, { method: 'DELETE' });
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/clients/${id}`, { method: 'DELETE' });
       if (!res.ok) {
         alert('Error al eliminar el cliente');
         return;
@@ -58,7 +58,7 @@ export default function ClientsAndSalesRecords() {
 
   async function handleDeleteSale(id) {
     try {
-      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/sales/${id}`, { method: 'DELETE' });
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/sales/${id}`, { method: 'DELETE' });
       if (!res.ok) {
         alert('Error al eliminar la venta');
         return;

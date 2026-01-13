@@ -10,7 +10,7 @@ export default function Harvest(){
     async function fetchHarvests(){
         console.log(harvests);
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/harvest`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/harvest`);
             const data = await response.json();
             setHarvests(data)
         }

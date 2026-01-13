@@ -2,7 +2,7 @@ export default function LandsRecords({ lands, onRefresh }) {
 
     async function handleDelete(id) {
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/lands/${id}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/lands/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

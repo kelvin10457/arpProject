@@ -11,7 +11,7 @@ export default function Form({ onRefresh }) {
   const [harvests,setHarvests] = useState([]);
     async function fetchHarvest(){
       try {
-          const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/harvest`);
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/api/harvest`);
           const data = await response.json();
           setHarvests(data)
       }
@@ -47,7 +47,7 @@ export default function Form({ onRefresh }) {
     };
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/clasification`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/clasification`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

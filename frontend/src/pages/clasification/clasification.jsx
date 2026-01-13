@@ -7,7 +7,7 @@ export default function Clasification() {
 
     async function fetchClasifications() {
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/clasification`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/clasification`);
             const data = await response.json();
             console.log('clasification data', data);
             setClasifications(data);

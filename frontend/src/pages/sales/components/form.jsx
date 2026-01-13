@@ -16,7 +16,7 @@ export default function SaleForm() {
   useEffect(() => {
     async function fetchHarvests() {
       try {
-        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/harvest`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/harvest`);
         const data = await res.json();
         setHarvests(data);
       } catch (e) {
@@ -49,7 +49,7 @@ export default function SaleForm() {
     };
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/sales`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/sales`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

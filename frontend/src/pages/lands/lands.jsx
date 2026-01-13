@@ -8,7 +8,7 @@ export default function Lands(){
 
     async function fetchLands(){
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/lands`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/lands`);
             const data = await response.json();
             setLands(data)
         }
