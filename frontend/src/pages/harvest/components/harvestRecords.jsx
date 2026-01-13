@@ -3,7 +3,7 @@ export default function HarvestRecords({ harvests, onRefresh }) {
     
     async function handleDelete(id) {
         try {
-            const response = await fetch(`http://localhost:3000/api/harvest/${id}`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/harvest/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

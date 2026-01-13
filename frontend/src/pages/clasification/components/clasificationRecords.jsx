@@ -7,7 +7,7 @@ export default function ClasificationRecords({ clasifications, onRefresh }) {
     },[]);
     async function handleDelete(id) {
         try {
-            const response = await fetch(`http://localhost:3000/api/clasification/${id}`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/clasification/${id}`, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' }
             });

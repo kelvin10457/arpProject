@@ -18,7 +18,7 @@ export default function Form( {onRefresh} ) {
     e.preventDefault();
     console.log('Form Data Submitted:', formData);
     try {
-      const response = await fetch('http://localhost:3000/api/lands', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/lands`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
